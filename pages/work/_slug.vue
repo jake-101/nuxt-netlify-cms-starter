@@ -173,7 +173,8 @@ getVimeo() {
 </script>
 
 <style lang="scss" scoped>
-.video {margin-bottom:2.4rem;}
+.video {margin-bottom:2.4rem;border: 1px solid #ccc; box-shadow: 8px 8px 40px rgba(20,20,20,.3);transition: box-shadow .5s;}
+.video:hover {box-shadow: 8px 8px 70px rgba(20,20,20,.3);transition: box-shadow .5s;}
 .post {
   .meta-section,
   .thumbnail {
