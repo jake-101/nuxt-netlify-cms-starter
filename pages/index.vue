@@ -34,9 +34,11 @@ export default {
       const wholeMD = await import(`~/content/work/${blog.slug}.md`)
       return {
         attributes: wholeMD.attributes,
-        link: blog.slug
+        link: blog.slug,
       }
     }
+
+
 
     const blogList = await Promise.all(
       blogs.map(blog => awaitImport(blog))
@@ -45,6 +47,8 @@ export default {
         blogList: res
       }
     })
+
+
 
     return blogList
   }

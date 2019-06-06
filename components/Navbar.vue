@@ -5,6 +5,12 @@
         <nuxt-link to="/" class="nav-link">Norman Bertolino</nuxt-link>
       </div>
       <ul class="social-icons">
+        <li v-for="page in pages" :key="page.slug" class="page">
+          <nuxt-link :to="`/page/${page.slug}`" 
+           class="nav-link">
+            {{page.title}}
+          </nuxt-link>
+        </li>
         <li class="icon">
           <a href="https://twitter.com/normanbertolino/"
            target="_blank" 
@@ -16,6 +22,14 @@
     </div>
   </nav>
 </template>
+<script>
+
+
+export default {
+props: ['pages']
+  
+  }
+  </script>
 
 <style lang="scss" scoped>
 .navbar {

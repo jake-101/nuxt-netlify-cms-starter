@@ -66,12 +66,13 @@ const getPages = dir => {
       const markdownFile = fs.readFileSync(`content/page/${file}`, 'utf-8')
       const fileContents = parseMarkdown(markdownFile)
       const date = fileContents.date
+      const title = fileContents.title
       const slug = file
         .split('.')
         .slice(0, -1)
         .join('.')
 
-      const obj = { date, slug }
+      const obj = { date, slug, title }
 
       filelist.push(obj)
     }

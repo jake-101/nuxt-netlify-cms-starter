@@ -1,6 +1,6 @@
 <template>
   <div class="site-wrapper">
-    <Navbar />
+    <Navbar :pages="pages" />
 
     <main id="main" class="main" role="main">
       <nuxt />
@@ -13,8 +13,13 @@
 <script>
 import Footer from '~/components/Footer'
 import Navbar from '~/components/Navbar'
-
+import pages from '~/content/pages.json'
 export default {
+    data: function () {
+    return {
+      pages: pages
+    }
+  },
   components: {
     Footer,
     Navbar
