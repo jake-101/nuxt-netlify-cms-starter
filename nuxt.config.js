@@ -7,7 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    script: [{ src: './assets/identity' }],
+    script: [{ src: '/identity.js' }],
     title: 'Norman Bertolino',
     meta: [
       {
