@@ -2,14 +2,14 @@
   <section class="post">
     <Container class="meta-section">
       <h1>{{ title }}</h1>
-      <p v-if="published === updated" class="post-meta">
+      <!-- <p v-if="published === updated" class="post-meta">
         Posted on {{ published }} by
         <a v-if="authorlink" :href="authorlink">{{ author }}</a>
-      </p>
+      </p> 
       <p v-else class="post-meta">
         Updated on {{ updated }} by
         <a v-if="authorlink" :href="authorlink">{{ author }}</a>
-      </p>
+      </p> -->
     </Container>
     <Container narrow>
       <img v-lazy="thumbnail" class="thumbnail" :alt="title" />

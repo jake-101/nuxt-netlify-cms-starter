@@ -5,9 +5,9 @@ publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "work"
+    label: "Work"
+    folder: "content/work"
     create: true
     slug: "{{slug}}"
     sort: "date:desc"
@@ -20,5 +20,17 @@ collections:
       - {label: "Updated Date", name: "update", widget: "date", required: false}
       - {label: "Author", name: "author", widget: "string", required: true}
       - {label: "Author Link", name: "authorlink", widget: "string", required: false}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: true}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+  - name: "page"
+    label: "Page"
+    folder: "content/page"
+    create: true
+    slug: "{{slug}}"
+    sort: "date:desc"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "date", required: true}
+      - {label: "Updated Date", name: "update", widget: "date", required: false}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: true}
       - {label: "Body", name: "body", widget: "markdown", required: true}

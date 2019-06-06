@@ -1,6 +1,6 @@
 <template>
   <article class="article-card" :class="[size, language]">
-    <nuxt-link :to="`/blog/${articleInfo.link}`">
+    <nuxt-link :to="`/work/${articleInfo.link}`">
       <div class="card-inner">
         <p class="type">
           {{ capitalize(articleInfo.attributes.type) }}

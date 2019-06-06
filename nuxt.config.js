@@ -45,7 +45,7 @@ export default {
       {
         hid: 'og:article:author',
         property: 'og:article:author',
-        content: 'https://github.com/code-tribe'
+        content: 'https://twitter.com/normanbertolino'
       },
       {
         hid: 'og:site_name',
@@ -79,7 +79,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#ccc' },
 
   /**
    * Plugins
