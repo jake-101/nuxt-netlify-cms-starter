@@ -7,7 +7,10 @@ export default {
    ** Headers of the page
    */
   head: {
-    script: [{ src: '/identity.js' }],
+    script: [
+      { src: '/identity.js' },
+      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+    ],
     title: 'Norman Bertolino',
     meta: [
       {
