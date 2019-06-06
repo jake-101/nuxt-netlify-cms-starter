@@ -1,4 +1,5 @@
-import blogs from './content/blogs.json'
+import blogs from './content/works.json'
+import pages from './content/pages.json'
 
 export default {
   mode: 'universal',
@@ -7,7 +8,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: '<Blog Name>',
+    title: 'Norman Bertolino',
     meta: [
       {
         charset: 'utf-8'
@@ -19,27 +20,27 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: `https://example.com`
+        content: `https://normanbertolino.com`
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: '<Blog Name>'
+        content: 'Norman Bertolino'
       },
       {
         hid: 'description',
         name: 'description',
-        content: '<Blog name> and description'
+        content: 'Norman Bertolino and description'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: '<Blog name> and description'
+        content: 'Norman Bertolino and description'
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
-        content: '<Blog Name>'
+        content: 'Norman Bertolino'
       },
       {
         hid: 'og:article:author',
@@ -49,7 +50,7 @@ export default {
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: '<Blog Name>'
+        content: 'Norman Bertolino'
       },
       {
         hid: 'og:type',
@@ -64,12 +65,12 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: '<Blog Name>'
+        content: 'Norman Bertolino'
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: '<Blog name> and description'
+        content: 'Norman Bertolino and description'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -89,7 +90,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-PV76V8S' }],
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
@@ -113,18 +113,7 @@ export default {
     imports: [
       {
         set: '@fortawesome/free-brands-svg-icons',
-        icons: [
-          'faTwitter',
-          'faInstagram',
-          'faGithub',
-          'faVuejs',
-          'faReact',
-          'faJs',
-          'faDocker',
-          'faWordpress',
-          'faNodeJs',
-          'faYarn'
-        ]
+        icons: ['faTwitter']
       }
     ]
   },
@@ -133,8 +122,8 @@ export default {
    * Manifest
    */
   manifest: {
-    name: '<Blog Name>',
-    short_name: '<Blog Name>',
+    name: 'Norman Bertolino',
+    short_name: 'Norman Bertolino',
     lang: 'en'
   },
 
@@ -142,7 +131,7 @@ export default {
    * sitemap
    */
   sitemap: {
-    hostname: 'https://example.com',
+    hostname: 'https://normanbertolino.com',
     gzip: true,
     exclude: ['/admin/']
   },
@@ -159,7 +148,10 @@ export default {
    * Generate config
    */
   generate: {
-    routes: [].concat(blogs.map(blog => `/blog/${blog.slug}`))
+    routes: [].concat(
+      blogs.map(blog => `/work/${blog.slug}`),
+      pages.map(pg => `/page/${pg.slug}`)
+    )
   },
 
   /**
@@ -179,14 +171,7 @@ export default {
      */
     extend(config, ctx) {
       // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+
 
       config.module.rules.push({
         test: /\.md$/,

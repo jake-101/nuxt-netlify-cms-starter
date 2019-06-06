@@ -3,7 +3,6 @@
     <nuxt-link :to="`/blog/${articleInfo.link}`">
       <div class="card-inner">
         <p class="type">
-          <font-awesome-icon :icon="['fab', icon]" />
           {{ capitalize(articleInfo.attributes.type) }}
         </p>
         <h4>{{ articleInfo.attributes.title }}</h4>

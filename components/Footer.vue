@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <Container flex>
-      &copy; Blog Name {{ new Date().getFullYear() }}
+      &copy; Norman Bertolino {{ new Date().getFullYear() }}
     </Container>
   </footer>
 </template>

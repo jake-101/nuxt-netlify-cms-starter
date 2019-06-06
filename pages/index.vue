@@ -2,7 +2,7 @@
   <section>
     <Container>
       <div class="intro">
-        <h1>Welcome to Blog Name</h1>
+        <h1>Recent Work</h1>
       </div>
     </Container>
     <Container flex>
@@ -20,7 +20,8 @@
 import ArticleCard from '~/components/ArticleCard'
 import Container from '~/components/Container'
 
-import blogs from '~/content/blogs.json'
+import blogs from '~/content/works.json'
+import pages from '~/content/pages.json'
 
 export default {
   components: {
@@ -30,7 +31,7 @@ export default {
 
   async asyncData({ app }) {
     async function awaitImport(blog) {
-      const wholeMD = await import(`~/content/blog/${blog.slug}.md`)
+      const wholeMD = await import(`~/content/work/${blog.slug}.md`)
       return {
         attributes: wholeMD.attributes,
         link: blog.slug

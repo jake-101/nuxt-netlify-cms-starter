@@ -21,7 +21,6 @@
 <script>
 import Container from '~/components/Container'
 
-import Prism from 'prismjs'
 
 export default {
   components: {
@@ -29,7 +28,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.title} | <Blog Name>`,
+      title: `${this.title} | Norman Bertolino`,
       meta: [
         {
           hid: 'article:published_time',
@@ -49,7 +48,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://<domain>/blog/${this.slug}`
+          content: `https://normanbertolino.com/work/${this.slug}`
         },
         {
           hid: 'og:title',
@@ -69,7 +68,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `https://<domain>${this.thumbnail}`
+          content: `https://normanbertolino.com/${this.thumbnail}`
         },
         {
           hid: 'og:image:alt',
@@ -109,13 +108,13 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `https://code-tribe.com${this.thumbnail}`
+          content: `https://normanbertolino.com${this.thumbnail}`
         }
       ]
     }
   },
   async asyncData({ params }) {
-    const post = await import(`~/content/blog/${params.slug}.md`)
+    const post = await import(`~/content/work/${params.slug}.md`)
     const attr = post.attributes
     const slug = params.slug
 
@@ -139,8 +138,8 @@ export default {
 
     const publishedDate = new Date(date)
     const updatedDate = new Date(update)
-    const published = publishedDate.toLocaleDateString('en-GB', dateOptions)
-    const updated = updatedDate.toLocaleDateString('en-GB', dateOptions)
+    const published = publishedDate.toLocaleDateString('en-US', dateOptions)
+    const updated = updatedDate.toLocaleDateString('en-US', dateOptions)
 
     return {
       title,
@@ -158,7 +157,6 @@ export default {
     }
   },
   mounted() {
-    Prism.highlightAll()
   }
 }
 </script>
