@@ -49,7 +49,6 @@ const writeBlogs = async () => {
   })
 }
 
-writeBlogs()
 
 /**
  *
@@ -100,3 +99,5 @@ const writePages = async () => {
 }
 
 writePages()
+
+writeBlogs()

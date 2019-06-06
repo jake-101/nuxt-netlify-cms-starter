@@ -1,6 +1,5 @@
 import blogs from './content/works.json'
 import pages from './content/pages.json'
-
 export default {
   mode: 'universal',
 
@@ -8,6 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
+    script: [{ src: './assets/identity' }],
     title: 'Norman Bertolino',
     meta: [
       {
@@ -171,7 +171,6 @@ export default {
      */
     extend(config, ctx) {
       // Run ESLint on save
-
 
       config.module.rules.push({
         test: /\.md$/,
