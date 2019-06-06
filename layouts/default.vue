@@ -23,7 +23,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/syntax.scss';
 
 html {
   font-size: 20px;

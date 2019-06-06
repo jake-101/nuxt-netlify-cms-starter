@@ -23,6 +23,7 @@
     "cross-env": "^5.2.0",
     "front-matter-markdown": "^0.4.3",
     "frontmatter-markdown-loader": "^1.6.1",
+    "netlify-cms-responsive-vimeo-editor-widget": "^1.0.3",
     "node-sass": "^4.12.0",
     "nuxt": "^2.8.1",
     "nuxt-fontawesome": "^0.4.0",
