@@ -9,11 +9,11 @@
       <p v-else class="post-meta">
         Updated on {{ updated }} by
         <a v-if="authorlink" :href="authorlink">{{ author }}</a>
-      </p> -->
+      </p> -->      <div class="video" v-if="vimeo" v-html="getVimeo()"></div>
+
     </Container>
     <Container narrow>
-      <img v-lazy="thumbnail" class="thumbnail" :alt="title" />
-      <div v-html="vimeo"></div>
+      <img v-if="!vimeo && thumbnail" v-lazy="thumbnail" class="thumbnail" :alt="title" />
       <div class="post-content" v-html="html"></div>
     </Container>
   </section>
@@ -114,6 +114,14 @@ export default {
       ]
     }
   },
+  methods: {
+getVimeo() {
+ return `<div style="overflow: hidden;padding-bottom: 56.25%;position: relative;height: 0;"><iframe src="https://player.vimeo.com/video/${
+      this.vimeo
+    }" style="left: 0;top: 0;height: 100%;width: 100%;
+      position: absolute;" width="853" height="505" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>`
+}
+  },
   async asyncData({ params }) {
     const post = await import(`~/content/work/${params.slug}.md`)
     const attr = post.attributes
@@ -165,6 +173,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.video {margin-bottom:2.4rem;}
 .post {
   .meta-section,
   .thumbnail {
