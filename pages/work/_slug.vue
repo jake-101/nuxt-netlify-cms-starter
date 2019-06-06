@@ -13,6 +13,7 @@
     </Container>
     <Container narrow>
       <img v-lazy="thumbnail" class="thumbnail" :alt="title" />
+      <div v-html="vimeo"></div>
       <div class="post-content" v-html="html"></div>
     </Container>
   </section>
@@ -124,6 +125,7 @@ export default {
       date,
       summary,
       thumbnail,
+      vimeo,
       title,
       type,
       update
@@ -150,6 +152,7 @@ export default {
       published,
       updated,
       type,
+       vimeo,
       thumbnail,
       summary,
       slug,
