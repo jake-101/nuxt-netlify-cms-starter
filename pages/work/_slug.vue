@@ -9,8 +9,8 @@
       <p v-else class="post-meta">
         Updated on {{ updated }} by
         <a v-if="authorlink" :href="authorlink">{{ author }}</a>
-      </p> -->      <div class="video" v-if="vimeo" v-html="getVimeo()"></div>
-
+      </p> -->      <div class="video" v-if="vimeo && !youtube" v-html="getVimeo()"></div>
+<div class="video" v-if="youtube && !vimeo" v-html="getYouTube()"></div>
     </Container>
     <Container narrow>
       <img v-if="!vimeo && thumbnail" v-lazy="thumbnail" class="thumbnail" :alt="title" />
@@ -120,6 +120,10 @@ getVimeo() {
       this.vimeo
     }" style="left: 0;top: 0;height: 100%;width: 100%;
       position: absolute;" width="853" height="505" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>`
+},
+getYouTube() {
+ return `<div style="overflow: hidden;padding-bottom: 56.25%;position: relative;height: 0;"><iframe width="560" height="315" src="https://www.youtube.com/embed/${this.youtube}" style="left: 0;top: 0;height: 100%;width: 100%;
+      position: absolute;" width="853" height="505" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
 }
   },
   async asyncData({ params }) {
@@ -134,6 +138,7 @@ getVimeo() {
       summary,
       thumbnail,
       vimeo,
+      youtube,
       title,
       type,
       update
@@ -160,6 +165,7 @@ getVimeo() {
       published,
       updated,
       type,
+           youtube,
        vimeo,
       thumbnail,
       summary,
