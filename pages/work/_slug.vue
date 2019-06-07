@@ -13,7 +13,7 @@
 <div class="video" v-if="youtube && !vimeo" v-html="getYouTube()"></div>
     </Container>
     <Container narrow>
-      <img v-if="!vimeo && thumbnail" v-lazy="thumbnail" class="thumbnail" :alt="title" />
+      <img v-if="!vimeo && !youtube && thumbnail" v-lazy="thumbnail" class="thumbnail" :alt="title" />
       <div class="post-content" v-html="html"></div>
     </Container>
   </section>
