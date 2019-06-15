@@ -9,11 +9,11 @@
       <p v-else class="post-meta">
         Updated on {{ updated }} by
         <a v-if="authorlink" :href="authorlink">{{ author }}</a>
-      </p> -->      <div class="video" v-if="vimeo && !youtube" v-html="getVimeo()"></div>
-<div class="video" v-if="youtube && !vimeo" v-html="getYouTube()"></div>
+      </p> -->      <div class="video in" v-if="vimeo && !youtube" v-html="getVimeo()"></div>
+<div class="video in" v-if="youtube && !vimeo" v-html="getYouTube()"></div>
     </Container>
     <Container narrow>
-      <img v-if="!vimeo && !youtube && thumbnail" v-lazy="thumbnail" class="thumbnail" :alt="title" />
+      <img v-if="!vimeo && !youtube && thumbnail" v-lazy="thumbnail" class="thumbnail in" :alt="title" />
       <div class="post-content" v-html="html"></div>
     </Container>
   </section>

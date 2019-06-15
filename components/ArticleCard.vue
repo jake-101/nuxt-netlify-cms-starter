@@ -1,5 +1,5 @@
 <template>
-  <article class="article-card" :style="`background:${bg[index]}`" :class="[size, language]">
+  <article class="article-card in" :style="`background:${bg[index]}`" :class="[size, language]">
     <nuxt-link :to="`/work/${articleInfo.link}`">
       <div class="card-inner">
         <p class="type">

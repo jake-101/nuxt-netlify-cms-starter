@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{ narrow, flex }">
+  <div  tag="div" class="container" :class="{ narrow, flex }">
     <slot />
   </div>
 </template>
@@ -15,6 +15,9 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  methods: {
+    
   }
 }
 </script>

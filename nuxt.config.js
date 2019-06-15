@@ -87,7 +87,7 @@ export default {
   /**
    * Plugins
    */
-  plugins: ['~/plugins/lazyload'],
+  plugins: ['~/plugins/lazyload', { src: '~/plugins/anime', mode: 'client' }],
 
   /*
    ** Nuxt.js modules
@@ -161,8 +161,54 @@ export default {
    * Transition
    */
   transition: {
-    name: 'fade',
-    mode: 'out-in'
+    css: false,
+    beforeEnter(el) {
+      this.$anime.set(el, { opacity: 1 })
+
+      this.$anime.set('.in', { opacity: 0, scale: '.8' })
+    },
+    enter: function(el, done) {
+      const _this = this
+      let enter = this.$anime
+        .timeline()
+
+        .add({
+          targets: '.in',
+          delay: _this.$anime.stagger(500),
+          duration: 300,
+          opacity: [0,1],
+          scale: 1,
+          easing: 'easeInOutCirc',
+          complete: function(anim) {
+            done()
+          }
+        })
+    },
+    leave: function(el, done) {
+      const _this = this
+      let leave = this.$anime
+        .timeline()
+
+        .add({
+          targets: '.in',
+          delay: _this.$anime.stagger(200),
+          duration: 300,
+          opacity: 0,
+          scale: '.8',
+          easing: 'easeInOutCirc'
+   
+        })
+
+        .add({
+          targets:  el,
+          duration: 300,
+          opacity: 0,
+          easing: 'easeInOutCirc',
+          complete: function(anim) {
+            done()
+          }
+        })
+    }
   },
 
   /*

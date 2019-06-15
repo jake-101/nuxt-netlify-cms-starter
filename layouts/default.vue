@@ -141,39 +141,39 @@ main {
   }
 }
 
-// Transitions
-.fade-enter-active {
-  animation: acrossIn 0.2s ease-out both;
+// // Transitions
+// .fade-enter-active {
+//   animation: acrossIn 0.2s ease-out both;
 
-  @media (max-width: 567px) {
-    animation: none;
-  }
-}
-.fade-leave-active {
-  animation: acrossOut 0.2s ease-in both;
+//   @media (max-width: 567px) {
+//     animation: none;
+//   }
+// }
+// .fade-leave-active {
+//   animation: acrossOut 0.2s ease-in both;
 
-  @media (max-width: 567px) {
-    animation: none;
-  }
-}
-@keyframes acrossIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-64px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes acrossOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(64px);
-  }
-}
+//   @media (max-width: 567px) {
+//     animation: none;
+//   }
+// }
+// @keyframes acrossIn {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-64px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+// @keyframes acrossOut {
+//   0% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateX(64px);
+//   }
+// }
 </style>
