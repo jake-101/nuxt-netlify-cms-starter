@@ -7,6 +7,7 @@
     </Container>
     <Container flex>
       <ArticleCard
+      :bg="colors"
         v-for="(blog, index) in blogList"
         :key="index"
         :index="index"
@@ -19,22 +20,26 @@
 <script>
 import ArticleCard from '~/components/ArticleCard'
 import Container from '~/components/Container'
-
 import blogs from '~/content/works.json'
 import pages from '~/content/pages.json'
+var tinycolor = require("tinycolor2");
 
 export default {
   components: {
     ArticleCard,
     Container
   },
-
+data: function () {
+    return {
+      colors: null
+    }
+  },
   async asyncData({ app }) {
     async function awaitImport(blog) {
       const wholeMD = await import(`~/content/work/${blog.slug}.md`)
       return {
         attributes: wholeMD.attributes,
-        link: blog.slug,
+        link: blog.slug
       }
     }
 
@@ -51,6 +56,18 @@ export default {
 
 
     return blogList
+  },
+  created() {
+    this.getColors()
+  },
+  methods: {
+    getColors() {
+      var rand = tinycolor.random();
+      var gray = tinycolor('#111')
+      var colors = tinycolor(rand).analogous();
+              this.colors = colors.map(function(t) { return tinycolor.mix(t,gray).desaturate(20).toHexString(); })
+
+    }
   }
 }
 </script>

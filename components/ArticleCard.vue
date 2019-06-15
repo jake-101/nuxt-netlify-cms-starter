@@ -1,5 +1,5 @@
 <template>
-  <article class="article-card" :class="[size, language]">
+  <article class="article-card" :style="`background:${bg[index]}`" :class="[size, language]">
     <nuxt-link :to="`/work/${articleInfo.link}`">
       <div class="card-inner">
         <p class="type">
@@ -14,6 +14,10 @@
 <script>
 export default {
   props: {
+    bg: {
+      type: Array,
+      default: ['#999','#999','#999','#999','#999']
+    },
     articleInfo: {
       type: Object,
       default: () => {}
@@ -29,6 +33,16 @@ export default {
       language: this.articleInfo.attributes.language,
       icon: ''
     }
+  },
+  computed: {
+getColor() {
+  if (this.bg) {
+  return this.bg[this.index]
+
+  } else {
+    return '#999'
+  }
+}
   },
   mounted() {
     const articleNo = this.index + 1
