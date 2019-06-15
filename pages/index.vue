@@ -7,7 +7,7 @@
     </Container>
         <div  class="container flex">
 
-      <ArticleCard
+      <ArticleCard @mouseover="grow($event)"
       :bg="colors"
         v-for="(blog, index) in blogList"
         :key="blog.link"
@@ -66,10 +66,16 @@ data: function () {
     before() {
 this.$anime.set('.article-card',{opacity:0})
     },
-animIn(el,done) {
-   
-    },
+    grow(e) {
+        const elm = e.target
+  console.log(elm)
 
+   this.$anime({
+     targets: elm,
+     scale: 1.1,
+     duration: 200
+   })
+    },
     getColors() {
       var rand = tinycolor.random();
       var gray = tinycolor('#111')

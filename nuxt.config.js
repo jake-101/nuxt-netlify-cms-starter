@@ -161,7 +161,6 @@ export default {
    * Transition
    */
   transition: {
-    css: false,
     beforeEnter(el) {
       this.$anime.set(el, { opacity: 1 })
 
@@ -174,12 +173,14 @@ export default {
 
         .add({
           targets: '.in',
-          delay: _this.$anime.stagger(500),
+          delay: _this.$anime.stagger(200),
           duration: 300,
-          opacity: [0,1],
-          scale: 1,
+          opacity: [0, 1],
+          scale: [0.8,1],
           easing: 'easeInOutCirc',
           complete: function(anim) {
+            _this.$anime.remove()
+
             done()
           }
         })
@@ -194,17 +195,17 @@ export default {
           delay: _this.$anime.stagger(200),
           duration: 300,
           opacity: 0,
-          scale: '.8',
+          scale: '.9',
           easing: 'easeInOutCirc'
-   
         })
 
         .add({
-          targets:  el,
+          targets: el,
           duration: 300,
           opacity: 0,
           easing: 'easeInOutCirc',
           complete: function(anim) {
+            _this.$anime.remove()
             done()
           }
         })
