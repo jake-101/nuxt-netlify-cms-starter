@@ -1,0 +1,16 @@
+<html>
+<head></head>
+<body>
+<form name="contact" method="POST" data-netlify="true" netlify v-on:submit="onSubmit">
+  <p>
+    <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
+  </p>
+  <p>
+    <label>Message <textarea rows="4" v-model="formmail.message" required name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+</body>
+</html>
