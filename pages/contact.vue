@@ -5,7 +5,7 @@
         <h1>Contact</h1>
       </div>
     </Container>
-        <div  class="container">
+        <div v-if="!response" class="container">
 <form name="contact" v-on:submit.prevent="onSubmit">
   <p>
     <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
@@ -17,6 +17,10 @@
     <button type="submit">Send</button>
   </p>
 </form>
+   
+        </div>
+                <div v-else class="container">
+{{response}}
    
         </div>
   </section>
@@ -37,7 +41,7 @@ name: 'contact',
     }},
 data: function () {
     return {
-      colors: null,
+      response: null,
       formmail: {
         email: '',
         message: ''
@@ -51,14 +55,16 @@ data: function () {
         onSubmit(evt) {
             this.formmail["form-name"] = 'contact'
             console.log(this.formmail,'formmail')
-            this.$axios.setHeader('Content-Type', 'application/x-www-form-url-encoded', ['post'])
-            this.$axios.$post('/', JSON.stringify(this.formmail))
+            this.$axios.setHeader('Content-Type', 'application/json', ['post'])
+            this.$axios.$post('/', this.formmail)
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
+                    this.response = response
                 }, function (errors) {
                     // error
                     errors => console.log(errors,'error')
+                    this.response = errors
                 });
         }
   }
