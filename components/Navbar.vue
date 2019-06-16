@@ -12,6 +12,12 @@
             {{page.title}}
           </nuxt-link>
         </li>
+          <li class="page">
+          <nuxt-link to="/contact" 
+           class="nav-link">
+            Contact
+          </nuxt-link>
+        </li>
         <li class="icon">
           <a href="https://twitter.com/normanbertolino/"
            target="_blank" 
@@ -55,6 +61,7 @@ props: ['pages']
   .navbar-inner {
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;

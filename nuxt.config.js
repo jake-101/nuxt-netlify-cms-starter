@@ -96,6 +96,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxtjs/axios',
     'nuxt-fontawesome',
     'nuxt-webfontloader'
   ],
