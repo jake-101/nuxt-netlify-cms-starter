@@ -49,12 +49,12 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://normanbertolino.com/work/${this.slug}`
+          content: `https://normanbertolino.com/page/${this.slug}`
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.title} | Code Tribe`
+          content: `${this.title} | Norman Bertolino`
         },
         {
           hid: 'description',
@@ -115,12 +115,7 @@ export default {
     }
   },
   methods: {
-getVimeo() {
- return `<div style="overflow: hidden;padding-bottom: 56.25%;position: relative;height: 0;"><iframe src="https://player.vimeo.com/video/${
-      this.vimeo
-    }" style="left: 0;top: 0;height: 100%;width: 100%;
-      position: absolute;" width="853" height="505" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>`
-}
+
   },
   async asyncData({ params }) {
     const post = await import(`~/content/page/${params.slug}.md`)
@@ -173,6 +168,7 @@ getVimeo() {
 </script>
 
 <style lang="scss" scoped>
+form input {font-size:1rem;padding:.2rem;}
 .video {margin-bottom:2.4rem;border: 1px solid #ccc; box-shadow: 8px 8px 40px rgba(20,20,20,.3);transition: box-shadow .5s;}
 .video:hover {box-shadow: 8px 8px 70px rgba(20,20,20,.3);transition: box-shadow .5s;}
 .post {

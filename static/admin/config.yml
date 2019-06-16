@@ -25,10 +25,10 @@ collections:
     folder: "content/page"
     create: true
     slug: "{{slug}}"
-    sort: "date:desc"
+    sort: "title:asc"
     fields:
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Publish Date", name: "date", widget: "date", required: true}
       - {label: "Updated Date", name: "update", widget: "date", required: false}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", required: true}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: true}

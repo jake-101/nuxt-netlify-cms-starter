@@ -2,7 +2,8 @@
   <nav class="navbar" role="navigation">
     <div class="navbar-inner">
       <div class="brand">
-        <nuxt-link to="/" class="nav-link">Norman Bertolino</nuxt-link>
+        <nuxt-link to="/" class="nav-link">Norman Bertolino<div class="subheading">Writer/Director</div></nuxt-link>
+        
       </div>
       <ul class="social-icons">
         <li v-for="page in pages" :key="page.slug" class="page">
@@ -16,6 +17,20 @@
            target="_blank" 
            class="nav-link">
             <font-awesome-icon :icon="['fab', 'twitter']" />
+          </a>
+        </li>
+            <li class="icon">
+          <a href="https://www.instagram.com/nor_mans_land/"
+           target="_blank" 
+           class="nav-link">
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a>
+        </li>
+                    <li class="icon">
+          <a href="https://www.imdb.com/name/nm4341041/"
+           target="_blank" 
+           class="nav-link">
+            <font-awesome-icon :icon="['fab', 'imdb']" />
           </a>
         </li>
       </ul>
@@ -32,6 +47,7 @@ props: ['pages']
   </script>
 
 <style lang="scss" scoped>
+.subheading {font-weight:300;font-size:75%;opacity:.7;}
 .navbar {
   width: 100%;
   font-family: 'Rubik', sans-serif;
@@ -72,7 +88,7 @@ props: ['pages']
 
         a {
           display: inline-block;
-          padding: 1.1rem 1rem 1rem 1rem;
+          padding: 1.1rem 1rem 1rem .25rem;
           box-shadow: none;
         }
       }

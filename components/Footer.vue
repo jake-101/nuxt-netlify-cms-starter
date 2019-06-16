@@ -19,6 +19,8 @@ export default {
 <style lang="scss">
 .footer {
   padding: 2rem 0;
+  font-size: 75%;
+  opacity: .5;
 
   @media (max-width: 567px) {
     padding: 1.2rem 0;

@@ -33,12 +33,12 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Norman Bertolino and description'
+        content: 'The online home for Los Angeles based writer and director Norman Bertolino'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Norman Bertolino and description'
+        content: 'The online home for Los Angeles based writer and director Norman Bertolino'
       },
       {
         hid: 'og:image:alt',
@@ -116,7 +116,7 @@ export default {
     imports: [
       {
         set: '@fortawesome/free-brands-svg-icons',
-        icons: ['faTwitter']
+        icons: ['faTwitter', 'faInstagram', 'faImdb']
       }
     ]
   },
@@ -176,7 +176,7 @@ export default {
           delay: _this.$anime.stagger(200),
           duration: 300,
           opacity: [0, 1],
-          scale: [0.8,1],
+          scale: [0.8, 1],
           easing: 'easeInOutCirc',
           complete: function(anim) {
             _this.$anime.remove()
