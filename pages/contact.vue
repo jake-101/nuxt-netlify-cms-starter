@@ -6,13 +6,12 @@
       </div>
     </Container>
         <div  class="container">
-<form name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true" netlify v-on:submit.prevent="onSubmit">
+<form name="contact" v-on:submit.prevent="onSubmit">
   <p>
     <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
   </p>
   <p>
     <label>Message <textarea rows="4" v-model="formmail.message" required name="message"></textarea></label>
-    <input hidden name="bot-field" />
   </p>
   <p>
     <button type="submit">Send</button>
