@@ -75,7 +75,7 @@ export default {
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'Norman Bertolino and description'
+        content: 'The online home for Los Angeles based writer and director Norman Bertolino'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -132,7 +132,8 @@ export default {
     short_name: 'Norman Bertolino',
     lang: 'en'
   },
-
+  icon: {
+    iconSrc: '/icon.png'   },
   /**
    * sitemap
    */
@@ -163,7 +164,7 @@ export default {
   /**
    * Transition
    */
-  transition: {
+  pageTransition: {
     beforeEnter(el) {
       this.$anime.set(el, { opacity: 1 })
 

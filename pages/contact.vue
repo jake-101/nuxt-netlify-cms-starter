@@ -59,7 +59,7 @@ data: function () {
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
-                    this.response = response
+                    this.response = response.message
                 }, function (errors) {
                     // error
                     errors => console.log(errors,'error')

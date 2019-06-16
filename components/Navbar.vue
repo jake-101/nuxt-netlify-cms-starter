@@ -13,7 +13,7 @@
           </nuxt-link>
         </li>
           <li class="page">
-          <nuxt-link to="contact" 
+          <nuxt-link to="/contact" 
            class="nav-link">
             Contact
           </nuxt-link>
@@ -69,6 +69,7 @@ props: ['pages']
 
     .brand {
       display: block;
+      font-size:1.25rem;
       font-weight: 700;
       text-align: left;
 
@@ -85,7 +86,7 @@ props: ['pages']
     }
 
     .social-icons {
-      padding: 0;
+      padding: 0 1rem;
       margin: 0;
       list-style-type: none;
       line-height: 1;
