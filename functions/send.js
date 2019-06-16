@@ -2,6 +2,7 @@ const Mailgun = require('mailgun-js')
 
 const sendEmail = ({ data }) => {
   return new Promise((resolve, reject) => {
+    console.log(data)
     console.log('Sending the email')
     const mailgun = Mailgun({
       apiKey: process.env.MG_KEY,
@@ -26,7 +27,7 @@ const sendEmail = ({ data }) => {
 exports.handler = async event => {
   try {
     const data = JSON.parse(event.body)
-
+    console.log(data)
     await sendEmail(data)
 
     // send a thank you email
