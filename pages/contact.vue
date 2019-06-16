@@ -36,7 +36,6 @@ data: function () {
     return {
       colors: null,
       formmail: {
-        'form-name': 'contact',
         email: '',
         message: ''
       }
@@ -47,7 +46,7 @@ data: function () {
   },
   methods: {
         onSubmit(evt) {
-            // this.formmail["form-name"] = 'contact'
+            this.formmail["form-name"] = 'contact'
             console.log(this.formmail,'formmail')
             this.$axios.setHeader('Content-Type', 'application/x-www-form-url-encoded', ['post'])
             this.$axios.$post('/', JSON.stringify(this.formmail))
