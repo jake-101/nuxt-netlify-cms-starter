@@ -6,7 +6,7 @@
       </div>
     </Container>
         <div  class="container">
-<form name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true" netlify v-on:submit="onSubmit">
+<form name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true" netlify v-on:submit.prevent="onSubmit">
   <p>
     <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
   </p>
