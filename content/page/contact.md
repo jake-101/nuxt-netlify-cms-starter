@@ -4,7 +4,7 @@ date: 2019-06-16T06:29:45.449Z
 update: 2019-06-16T06:29:45.458Z
 thumbnail: /images/uploads/email.png
 ---
-<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+<form action="/confirm" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
   <p style="display:none;">
     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </p>
