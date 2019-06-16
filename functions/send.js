@@ -4,8 +4,8 @@ const sendEmail = ({ data }) => {
   return new Promise((resolve, reject) => {
     console.log('Sending the email')
     const mailgun = Mailgun({
-      apiKey: MG_KEY,
-      domain: 'https://api.mailgun.net/v3/send.jake101.com'
+      apiKey: process.env.MG_KEY,
+      domain: process.env.MG_URL
     })
 
     const mailData = {
