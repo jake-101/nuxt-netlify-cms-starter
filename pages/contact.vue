@@ -53,17 +53,19 @@ data: function () {
   },
   methods: {
         onSubmit(evt) {
+          const _this = this
             console.log(this.formmail,'formmail')
             this.$axios.setHeader('Content-Type', 'application/json', ['post'])
             this.$axios.$post('/.netlify/functions/send', this.formmail)
                 .then(function (response) {
                     // success
-                    response => console.log(response,'success')
-                    this.response = response.message
+                    response => JSON.parse(response)
+                    _this.response = response.message
+                    
                 }, function (errors) {
                     // error
-                    errors => console.log(errors,'error')
-                    this.response = errors
+                    errors =>   _this.response = errors
+                  
                 });
         }
   }
