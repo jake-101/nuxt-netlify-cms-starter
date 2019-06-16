@@ -6,12 +6,12 @@
       </div>
     </Container>
         <div  class="container">
-<form name="contact" method="POST" data-netlify="true" v-on:submit="onSubmit" action="/confirm">
+<form name="contact" method="POST" data-netlify="true" netlify v-on:submit="onSubmit">
   <p>
     <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
   </p>
   <p>
-    <label>Message <textarea v-model="formmail.message" required name="message"></textarea></label>
+    <label>Message <textarea rows="4" v-model="formmail.message" required name="message"></textarea></label>
   </p>
   <p>
     <button type="submit">Send</button>
@@ -49,7 +49,7 @@ data: function () {
             // this.formmail["form-name"] = 'contact'
             console.log(this.formmail,'formmail')
             this.$axios.setHeader('Content-Type', 'application/x-www-form-url-encoded', ['post'])
-            this.$axios.$post('https://norman-bertolino.netlify.com/confirm/', JSON.stringify(this.formmail))
+            this.$axios.$post('/', JSON.stringify(this.formmail))
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
