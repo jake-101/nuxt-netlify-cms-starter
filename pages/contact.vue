@@ -48,7 +48,7 @@ data: function () {
             // this.formmail["form-name"] = 'contact'
             console.log(this.formmail)
             this.$axios.setHeader('Content-Type', 'application/x-www-form-url-encoded', ['post'])
-            this.$axios.$post('https://norman-bertolino.netlify.com/contact', JSON.stringify(this.formmail))
+            this.$axios.$post('https://norman-bertolino.netlify.com/contact/', JSON.stringify(this.formmail))
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
