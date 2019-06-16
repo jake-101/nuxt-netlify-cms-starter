@@ -33,12 +33,14 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'The online home for Los Angeles based writer and director Norman Bertolino'
+        content:
+          'The online home for Los Angeles based writer and director Norman Bertolino'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'The online home for Los Angeles based writer and director Norman Bertolino'
+        content:
+          'The online home for Los Angeles based writer and director Norman Bertolino'
       },
       {
         hid: 'og:image:alt',
