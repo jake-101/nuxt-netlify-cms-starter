@@ -16,7 +16,7 @@ const sendEmail = (email, message) => {
       text: message
     }
 
-    mailgun.messages().send(mailData, (err, body) => {
+    mailgun.messages().send(mailData, function(err, body) {
       console.log(body)
       if (err) return reject(err)
 
