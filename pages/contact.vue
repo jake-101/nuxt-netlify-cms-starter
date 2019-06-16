@@ -5,7 +5,7 @@
         <h1>Contact</h1>
       </div>
     </Container>
-        <div v-if="!response" class="container">
+        <div  class="container">
 <form name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true" netlify v-on:submit.prevent="onSubmit">
   <p>
     <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
@@ -19,9 +19,6 @@
   </p>
 </form>
    
-        </div>
-        <div class="container" v-else>
-          {{response}}
         </div>
   </section>
 </template>
@@ -42,7 +39,6 @@ name: 'contact',
 data: function () {
     return {
       colors: null,
-      response: null,
       formmail: {
         email: '',
         message: ''
@@ -54,17 +50,16 @@ data: function () {
   },
   methods: {
         onSubmit(evt) {
+            this.formmail["form-name"] = 'contact'
             console.log(this.formmail,'formmail')
-            this.$axios.setHeader('Content-Type', 'application/json', ['post'])
-            this.$axios.$post('/.netlify/functions/send', this.formmail)
+            this.$axios.setHeader('Content-Type', 'application/x-www-form-url-encoded', ['post'])
+            this.$axios.$post('/', JSON.stringify(this.formmail))
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
-                    this.response = response
                 }, function (errors) {
                     // error
                     errors => console.log(errors,'error')
-                    this.response = errors
                 });
         }
   }
