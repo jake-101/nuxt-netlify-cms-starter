@@ -8,10 +8,10 @@
         <div  class="container">
 <form name="contact" method="POST" data-netlify="true" v-on:submit="onSubmit">
   <p>
-    <label>Email: <input v-model="formmail.email" type="email" required name="email"></label>
+    <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
   </p>
   <p>
-    <label>Message: <textarea v-model="formmail.message" name="message"></textarea></label>
+    <label>Message <textarea v-model="formmail.message" name="message"></textarea></label>
   </p>
   <p>
     <button type="submit">Send</button>
@@ -45,10 +45,10 @@ data: function () {
   },
   methods: {
         onSubmit(evt) {
-            this.formmail["form-name"] = 'contact'
+            // this.formmail["form-name"] = 'contact'
             console.log(this.formmail)
             this.$axios.setHeader('Content-Type', 'application/x-www-form-url-encoded', ['post'])
-            this.$axios.$post('https://norman-bertolino.netlify.com/confirm', JSON.stringify(this.formmail))
+            this.$axios.$post('https://norman-bertolino.netlify.com/contact', JSON.stringify(this.formmail))
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
@@ -62,6 +62,29 @@ data: function () {
 </script>
 
 <style lang="scss" >
+form input,form textarea {
+    font-size: 1rem;
+    display: block;
+    width: 45ch;
+    max-width: 90%;
+    padding: .4rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: .5rem 0;
+}
+form button {
+  background: #000;border-radius:4px;padding: .3rem .6rem;color:#fff;font-size:1rem;
+}
+label {font-size:65%;}
+form {
+    margin: auto;
+    max-width: 45ch;
+}
+
+form label {
+    width: 45ch;
+    max-width: 100%;
+}
 .intro {
   text-align: center;
   margin-bottom: 2.4rem;
