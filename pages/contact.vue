@@ -28,10 +28,14 @@ import Container from '~/components/Container'
 
 
 export default {
-
+name: 'contact',
   components: {
     Container
   },
+    head() {
+    return {
+      title: `Contact | Norman Bertolino`,
+    }},
 data: function () {
     return {
       colors: null,

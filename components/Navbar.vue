@@ -13,7 +13,7 @@
           </nuxt-link>
         </li>
           <li class="page">
-          <nuxt-link to="/contact" 
+          <nuxt-link to="contact" 
            class="nav-link">
             Contact
           </nuxt-link>
