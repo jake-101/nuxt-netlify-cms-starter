@@ -53,10 +53,9 @@ data: function () {
   },
   methods: {
         onSubmit(evt) {
-            this.formmail["form-name"] = 'contact'
             console.log(this.formmail,'formmail')
             this.$axios.setHeader('Content-Type', 'application/json', ['post'])
-            this.$axios.$post('/', this.formmail)
+            this.$axios.$post('/.netlify/functions/send', this.formmail)
                 .then(function (response) {
                     // success
                     response => console.log(response,'success')
