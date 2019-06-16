@@ -2,7 +2,7 @@
 title: Contact
 date: 2019-06-16T06:29:45.449Z
 update: 2019-06-16T06:29:45.458Z
-thumbnail: /images/uploads/email.png
+thumbnail: ''
 ---
 <form action="/confirm" name="contact" method="POST" data-netlify="true">
 
