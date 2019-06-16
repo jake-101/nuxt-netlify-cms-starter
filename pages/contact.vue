@@ -82,8 +82,9 @@ form input,form textarea {
     margin: .5rem 0;
 }
 form button {
-  background: #000;border-radius:4px;padding: .3rem .6rem;color:#fff;font-size:1rem;
+  background: #000;border-radius:4px;padding: .3rem .6rem;color:#fff;font-size:1rem;cursor:pointer;
 }
+form button:hover {background:#222;transition:.2s all;}
 label {font-size:65%;}
 form {
     margin: auto;
