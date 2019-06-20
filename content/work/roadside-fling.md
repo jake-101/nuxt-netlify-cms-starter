@@ -4,7 +4,7 @@ title: Roadside Fling
 vimeo: '272883815'
 date: 2019-06-06T17:38:13.041Z
 update: 2019-06-06T17:38:13.053Z
-thumbnail: /images/uploads/fling.jpg
+thumbnail: /images/uploads/roadslide.jpg
 ---
 A couple have a hard time finding the "right" spot.
 
