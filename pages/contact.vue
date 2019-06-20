@@ -6,7 +6,7 @@
       </div>
     </Container>
         <div v-if="!response" class="container">
-<form name="contact" v-on:submit.prevent="onSubmit">
+<form name="contact">
   <p>
     <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
   </p>
@@ -14,7 +14,7 @@
     <label>Message <textarea rows="4" v-model="formmail.message" required name="message"></textarea></label>
   </p>
   <p>
-    <button type="submit">Send</button>
+    <button  v-on:click.prevent="onSubmit" type="submit">Send</button>
   </p>
 </form>
    

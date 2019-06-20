@@ -5,7 +5,7 @@
         <h1>Recent Work</h1>
       </div>
     </Container>
-        <div  class="container flex">
+        <div v-if="blogList" class="container flex">
 
       <ArticleCard @mouseover="grow($event)"
       :bg="colors"

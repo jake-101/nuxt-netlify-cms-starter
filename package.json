@@ -1,11 +1,11 @@
 {
-  "name": "nuxt-netlify-cms-starter",
+  "name": "norman-bertolino-nuxt-netlify-cms-starter",
   "version": "1.0.0",
-  "description": "<Blog Name> Blog",
-  "author": "Code Tribe",
+  "description": "Norman Bertolino",
+  "author": "jake101.com",
   "private": true,
   "scripts": {
-    "dev": "node content/index.js && nuxt",
+    "dev": "node content/index.js && nuxt && netlify-lambda serve functions",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "node content/index.js && nuxt generate",
@@ -27,6 +27,7 @@
     "frontmatter-markdown-loader": "^1.6.1",
     "mailgun-js": "^0.22.0",
     "netlify-cms-responsive-vimeo-editor-widget": "^1.0.3",
+    "netlify-lambda": "^1.4.13",
     "node-sass": "^4.12.0",
     "nuxt": "^2.8.1",
     "nuxt-fontawesome": "^0.4.0",
