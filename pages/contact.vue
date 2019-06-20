@@ -8,10 +8,12 @@
         <div v-if="!response" class="container">
 <form name="contact">
   <p>
-    <label>Email <input v-model="formmail.email" type="email" required name="email"></label>
+    <label>Email </label>
+    <input v-model="formmail.email" type="email" required name="email">
   </p>
   <p>
-    <label>Message <textarea rows="4" v-model="formmail.message" required name="message"></textarea></label>
+    <label>Message </label>
+    <textarea rows="4" v-model="formmail.message" required name="message"></textarea>
   </p>
   <p>
     <button  v-on:click.prevent="onSubmit" type="submit">Send</button>
@@ -56,7 +58,7 @@ data: function () {
           const _this = this
             console.log(this.formmail,'formmail')
             this.$axios.setHeader('Content-Type', 'application/json', ['post'])
-            this.$axios.$post('/.netlify/functions/send', this.formmail)
+            this.$axios.$post('https://normanbertolino.com/.netlify/functions/send', JSON.stringify(this.formmail))
                 .then(function (response) {
                     // success
                     response => JSON.parse(response)
