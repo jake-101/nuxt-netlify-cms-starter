@@ -19,7 +19,7 @@
 </form>
    
         </div>
-                <div v-else class="container">
+                <div v-else class="container text-center">
 {{response}}
    
         </div>
@@ -73,6 +73,7 @@ data: function () {
 </script>
 
 <style lang="scss" >
+.text-center {text-align:center;}
 form input,form textarea {
     font-size: 1rem;
     display: block;

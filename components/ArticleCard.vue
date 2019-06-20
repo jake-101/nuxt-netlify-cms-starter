@@ -1,5 +1,5 @@
 <template>
-  <article  class="article-card in" :style="`background:${bg[index]}`" :class="[size, language]">
+  <article  class="article-card in" :style="`background:url(${articleInfo.attributes.thumbnail}),${bg[index]};background-blend-mode:multiply;background-size:cover;background-position:50% 50%;`" :class="[size, language]">
     <nuxt-link :to="`/work/${articleInfo.link}`">
       <div class="card-inner">
         <p class="type">
@@ -89,10 +89,9 @@ getColor() {
 
 .article-card {
   border-radius: 0.5rem;
-  background-color: #d84727;
   padding: 1rem;
   margin-bottom: 2rem;
-  min-height: 240px;
+  min-height: 28vh;
   transition: .3s transform;
 
   position: relative;
