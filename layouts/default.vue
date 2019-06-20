@@ -1,5 +1,6 @@
 <template>
   <div class="site-wrapper">
+    <div class="color-bar" :key="`${this.colors[0]}-top`" :style="getGradient"> </div>
     <Navbar :pages="pages" />
 
     <main id="main" class="main" role="main">
@@ -15,10 +16,26 @@ import Footer from '~/components/Footer'
 import Navbar from '~/components/Navbar'
 import pages from '~/content/pages.json'
 export default {
+    watch: {
+    $route () {
+  this.$store.dispatch('getColors')    }
+  },
     data: function () {
     return {
       pages: pages
     }
+  },
+  computed: {
+    colors() {
+    return this.$store.state.colors
+
+    },
+    getGradient() {
+      return `background: linear-gradient(to top,${this.colors[0]},${this.colors[1]},${this.colors[2]}); color:${this.colors[2]};`
+    }
+  },
+    created() {
+     this.$store.dispatch('getColors')
   },
   components: {
     Footer,
@@ -28,10 +45,10 @@ export default {
 </script>
 
 <style lang="scss">
-
+.color-bar {height:10px; transition: .4s all; -webkit-text-fill-color: transparent; -webkit-background-clip: text;-webkit-box-decoration-break: clone;}
 html {
   font-size: 20px;
-  word-spacing: 1px;
+  word-spacing: 1px; 
 }
 
 html,

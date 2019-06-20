@@ -7,7 +7,7 @@
     </Container>
         <div v-if="blogList" class="container flex">
 
-      <ArticleCard @mouseover="grow($event)"
+      <ArticleCard 
       :bg="colors"
         v-for="(blog, index) in blogList"
         :key="blog.link"
@@ -23,7 +23,6 @@ import ArticleCard from '~/components/ArticleCard'
 import Container from '~/components/Container'
 import blogs from '~/content/works.json'
 import pages from '~/content/pages.json'
-var tinycolor = require("tinycolor2");
 
 export default {
 
@@ -33,7 +32,6 @@ export default {
   },
 data: function () {
     return {
-      colors: null
     }
   },
   async asyncData({ app }) {
@@ -59,8 +57,11 @@ data: function () {
 
     return blogList
   },
-  created() {
-    this.getColors()
+
+  computed: {
+    colors() {
+      return this.$store.state.colors
+    }
   },
   methods: {
     before() {
@@ -76,13 +77,7 @@ this.$anime.set('.article-card',{opacity:0})
      duration: 200
    })
     },
-    getColors() {
-      var rand = tinycolor.random();
-      var gray = tinycolor('#111')
-      var colors = tinycolor(rand).analogous();
-              this.colors = colors.map(function(t) { return tinycolor.mix(t,gray).desaturate(20).toHexString(); })
 
-    }
   }
 }
 </script>

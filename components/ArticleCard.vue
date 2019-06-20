@@ -1,5 +1,5 @@
 <template>
-  <article  class="article-card in" :style="`background:url(${articleInfo.attributes.thumbnail}),${bg[index]};background-blend-mode:multiply;background-size:cover;background-position:50% 50%;`" :class="[size, language]">
+  <article  class="article-card in" :style="`background:url(${articleInfo.attributes.thumbnail}),${bg[index]};background-position: 50% 50%;background-size:cover;`" :class="[size, language]">
     <nuxt-link :to="`/work/${articleInfo.link}`">
       <div class="card-inner">
         <p class="type">
@@ -90,26 +90,35 @@ getColor() {
 .article-card {
   border-radius: 0.5rem;
   padding: 1rem;
+  background-blend-mode:multiply;
+box-shadow: 8px 8px 40px rgba(20, 20, 20, 0.3);
   margin-bottom: 2rem;
-  min-height: 28vh;
-  transition: .3s transform;
+  min-height: 32vh;
+    transition: .2s box-shadow,0.5s background-color;
 
   position: relative;
   overflow: hidden;
+  &:hover {
+    box-shadow: 8px 8px 70px rgba(20,20,20,.3);
+      transition: .2s box-shadow;
+  }
 
   a {
     position: absolute;
     height: 100%;
     width: 100%;
+      background-blend-mode:multiply;
+
     left: 0;
     top: 0;
     color: #fff;
     box-shadow: none;
     background: rgba(0, 0, 0, 0);
-    transition: 0.2s ease all;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.05);
+          background: rgba(200, 200, 200, 0.2);
+      mix-blend-mode: hard-light;
+      transition: 0.5s background-color, .3s mix-blend-mode;
     }
   }
 
@@ -159,8 +168,9 @@ getColor() {
     padding: 0 1rem;
 
     .type {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.1);
       padding: 0.4rem;
+      color:#cdcdcd;
       border-radius: 0.2rem;
       margin-bottom: 0.5rem;
       font-size: 0.8rem;
@@ -169,6 +179,8 @@ getColor() {
     }
     h4 {
       margin-top: 0;
+            text-shadow: 2px 2px 1px rgba(0,0,0,.1);
+
       margin-bottom: 0.25rem;
     }
   }

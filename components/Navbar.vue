@@ -2,7 +2,7 @@
   <nav class="navbar" role="navigation">
     <div class="navbar-inner">
       <div class="brand">
-        <nuxt-link to="/" class="nav-link">Norman Bertolino<div class="subheading">Writer/Director</div></nuxt-link>
+        <nuxt-link to="/" class="nav-link"><span :key="colors[0]" class="nav-nb" :style="getGradient">Norman Bertolino</span><div class="subheading">Writer/Director</div></nuxt-link>
         
       </div>
       <ul class="social-icons">
@@ -47,12 +47,23 @@
 
 
 export default {
-props: ['pages']
+props: ['pages'],
+computed: {
+      colors() {
+      return this.$store.state.colors
+    },
+    getGradient() {
+      return `background: linear-gradient(to right,${this.colors[0]},${this.colors[1]},${this.colors[2]});-webkit-background-clip: text;color:${this.colors[2]};`
+    }
+}
   
   }
   </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
+.nav-nb {
+  transition: .4s all; -webkit-text-fill-color: transparent; -webkit-background-clip: text;-webkit-box-decoration-break: clone;
+}
 .subheading {font-weight:300;font-size:75%;opacity:.7;}
 .navbar {
   width: 100%;

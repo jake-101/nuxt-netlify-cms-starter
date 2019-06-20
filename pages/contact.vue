@@ -5,8 +5,9 @@
         <h1>Contact</h1>
       </div>
     </Container>
-        <div v-if="!response" class="container">
-<form name="contact">
+        <div v-if="!response" class="container text-center">
+Email: <a href='mail&#116;&#111;&#58;n%&#54;Frma&#37;6&#69;b&#101;&#114;&#116;olin&#111;%40gm&#37;61%69l&#46;com'>n&#111;rma&#110;be&#114;t&#111;lino&#64;&#103;ma&#105;l&#46;com</a>
+<!-- <form name="contact">
   <p>
     <label>Email </label>
     <input v-model="formmail.email" type="email" required name="email">
@@ -18,7 +19,7 @@
   <p>
     <button  v-on:click.prevent="onSubmit" type="submit">Send</button>
   </p>
-</form>
+</form> -->
    
         </div>
                 <div v-else class="container text-center">
