@@ -1,5 +1,5 @@
 ---
-type: Music
+type: Music Interview
 title: Jawnstar
 youtube: ysPJ81XN0lM
 date: 2019-04-10T01:08:27.361Z
