@@ -7,3 +7,5 @@ update: 2019-08-20T01:16:13.022Z
 thumbnail: /images/uploads/screen-shot-2019-08-19-at-6.10.04-pm.png
 ---
 The Man, The Myth, The Legend. Deke Fingersnaps
+
+Skit from the "The Groove Program" with Bill Cinque.
